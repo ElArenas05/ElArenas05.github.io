@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Números Positivos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-image: url('Fotos/istockphoto-1434782845-612x612.jpg'); /* Reemplaza esta URL con la de tu imagen */
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background-image: url('Fotos/01b6f3e3d74e33df29a2d9dde6e1fe66.gif'); /* Reemplaza esta URL con la de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 20px; /* Reduje el padding para hacer el encabezado más pequeño */
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #ad0c92;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .summary {
+            margin-top: 30px;
+            font-size: 16px;
+            text-align: justify;
+        }
+        .help-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        .help-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Descubre cual es el mayor y el menor de tus números positivos</h1>
+    </header>
+    <div class="container">
+        <p>Presiona el botón para ingresar 10 números positivos. Descubre el menor y el mayor número.</p>
+        <button onclick="calcularNumeros()">Comenzar</button>
+        <div class="result" id="resultado"></div>
+    </div>
+    <button class="help-button" onclick="window.location.href='ayuda.html'">Ayuda</button> <!-- Botón de ayuda -->
+    <script>
+        function calcularNumeros() {
+            let numeros = [];
+
+            for (let i = 0; i < 10; i++) {
+                let numero = parseInt(prompt(`Ingresa el número positivo ${i + 1}:`));
+                while (isNaN(numero) || numero <= 0) {
+                    numero = parseInt(prompt("Por favor ingresa un número entero positivo:"));
+                }
+                numeros.push(numero);
+            }
+
+            let menor = numeros[0];
+            let mayor = numeros[0];
+
+            for (let i = 1; i < numeros.length; i++) {
+                if (numeros[i] < menor) {
+                    menor = numeros[i];
+                }
+                if (numeros[i] > mayor) {
+                    mayor = numeros[i];
+                }
+            }
+
+            document.getElementById("resultado").innerHTML = 
+                `El número menor es: ${menor}<br>El número mayor es: ${mayor}<br>` +
+                `<a href="https://enciclopediaiberoamericana.com/numeros-positivos/" target="_blank">Más información sobre los números positivos</a>`;
+        }
+    </script>
+</body>
+</html>
+

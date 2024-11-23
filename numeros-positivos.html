@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Positivos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-image: url('https://via.placeholder.com/800x600?text=Números+Positivos');
+            background-size: cover;
+            color: white;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 40px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #ad0c92;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .summary {
+            font-size: 20px;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="summary" id="resumen">
+            <h2>¿Qué son los números positivos?</h2>
+            <p>Los números positivos son aquellos mayores que cero. Representan cantidades o magnitudes que están por encima de un punto de referencia, como la distancia, el dinero, la temperatura, entre otros. Por ejemplo, los números 1, 2, 3, etc., son positivos y suelen utilizarse en la vida cotidiana para medir y contar.</p>
+        </div>
+        <button onclick="window.location.href='contador.html'">Ir al contador de números positivos</button>
+    </div>
+
+    <script>
+        function calcularNumeros() {
+            let numeros = [];
+
+            for (let i = 0; i < 10; i++) {
+                let numero = parseInt(prompt(`Ingresa el número positivo ${i + 1}:`));
+                while (isNaN(numero) || numero <= 0) {
+                    numero = parseInt(prompt("Por favor ingresa un número entero positivo:"));
+                }
+                numeros.push(numero);
+            }
+
+            let menor = numeros[0];
+            let mayor = numeros[0];
+
+            for (let i = 1; i < numeros.length; i++) {
+                if (numeros[i] < menor) {
+                    menor = numeros[i];
+                }
+                if (numeros[i] > mayor) {
+                    mayor = numeros[i];
+                }
+            }
+
+            document.getElementById("resultado").innerText = 
+                `El número menor es: ${menor}\nEl número mayor es: ${mayor}`;
+
+            document.getElementById("extra-resumen").innerHTML = `
+                <h3>Ejemplos de números enteros</h3>
+                <p>1, 2, 3, 4, 5, 6, 7, 8, 9, 11.</p>`;
+        }
+    </script>
+</body>
+</html>
+

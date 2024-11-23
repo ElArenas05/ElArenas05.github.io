@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuda - Números Enteros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: black; /* Fondo negro para toda la página */
+            color: white; /* Texto blanco para mejor visibilidad */
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: white; /* Asegura que el texto dentro del contenedor sea blanco */
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+        .gif-container {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        .gif-container img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        function mostrarMensaje() {
+            document.getElementById("mensaje").innerHTML = 
+                "<h1>¿Qué son los números enteros?</h1>" +
+                "<p>Los números enteros son aquellos que no tienen decimales y pueden ser positivos, negativos o cero. Representan cantidades completas y pueden encontrarse en múltiples contextos, como en la contabilidad, la estadística y la vida diaria. Ejemplos de números enteros incluyen -3, 0, 5, y 42.</p>";
+        }
+        window.onload = mostrarMensaje;
+    </script>
+</head>
+<body>
+    <div class="container" id="mensaje">
+        <!-- El mensaje se mostrará aquí automáticamente al cargar la página -->
+    </div>
+    <div class="button-container">
+        <button onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')">Explicación</button>
+        <button onclick="window.location.href='https://enciclopediaiberoamericana.com/numeros-positivos/'">Más información</button>
+        <button onclick="window.location.href='calculadora-perimetro.html'">Calculadora de perímetro</button> <!-- Redirige a otra página HTML -->
+    </div>
+    <div class="gif-container">
+        <img src="Fotos/01b6f3e3d74e33df29a2d9dde6e1fe66.gif" alt="Gif de números enteros"> <!-- Reemplaza esta URL con tu gif -->
+    </div>
+</body>
+</html>
